@@ -38,7 +38,7 @@ The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and
 
 **Minor**: The minor processor model has a fixed pipeline with configurable data structures and execute behaviour. It is intended to be used for processsors with strict "in-order" execution behaviour and can also allow the visualization of an instruction's position in the pipeline with the use of MinorTrace/minorview.py tool. It can be used to simulate the micro-architectural model of a chosen processor with similar capabilities. The model is unable to multithread. It also uses some branch prediction mechanisms to speed up optimize memory access, registry dependencies are managed by a "scoreboard".  
   
-(sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html)  
+(_sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html_)  
 
 ### Simulations:  
 We run emulations using "Minor" and "SimpleCPU" architectures on a simple C script that calculates the hypotenuse of a triangle with sides X,Y.  
