@@ -1,4 +1,4 @@
-# lab1
+# Lab1
 Computer Architecture Lab 1
 
 Answer 1:
