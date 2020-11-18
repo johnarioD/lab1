@@ -71,3 +71,8 @@ Consequently, We run the same code through emulations with clock frequencies of 
 | L2 access      | 593        |  593       |   596        |  593        |
 
 Comparing one model to another it seems that the minor model in general requires less "machine" time to run its programs meaning it should be faster. The simulation for minor, however takes longer through gem5 as the model itself is more complex (as described in the two small paragraphs above). The SimpleCPU with it's ""minimal" command set seems to require less instructions and operations to run the same program when compared to the "Minor" architecture. One obvious difference between the two models is that the TimingSimpleCPU utilizing the "detailed" timing memory access requires far less L2 cache (or higher level memory) accesses compared to minor, regardless of what memory architecture we use.
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
