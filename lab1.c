@@ -4,7 +4,7 @@
 
 /* Program written by Diamantaras Ioannis 9387, Mpounarelis Dimosthenis 9431
  * This simple script returns the hypotenuse of a triangle with given sides
- * For simplicity th length of each side is an integer that is given to the program
+ * For simplicity the length of each side is an integer that is given to the program
  * via command line arguments
  */
 float main(int argc, char *argv[]){
