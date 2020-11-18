@@ -2,7 +2,7 @@
 Computer Architecture Lab 1
 
 Answer 1:
-
+---
 After looking through starter_se.py we found the following:
 CPU type can be 'atomic', 'minor', 'hpi', our command line arguments choose the 'minor' type
 The clock has a frequency of 1GHz with and receives 3.3 Volts
@@ -11,7 +11,7 @@ Caches include a L1 Instruction cache a L1 Data, a L2 and Walk cache, the defaul
 Emulated system memory is 2GB.
 
 Answer 2:
-
+---
 Config.json and Config.ini seem to be two different versions of the same file, both containing info about the emulated hardware & architecture characteristics
 From Config.ini we found:
 
@@ -34,7 +34,7 @@ L2 accesses: 497 Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests
 If it was not provided, it's sum of L1 misses from data and instruction caches (Lines 111,314)
 
 Answer 3:
-
+---
 The two main types of in-order CPU architecture used in gem5 are "SimpleCPU" and "Minor"
 
 SimpleCPU: The SimpleCPU model is a 32 bit RISC, in-order processor model that lacks detail as it utilizes a minimal amount of instructions. It has 32 bit registers 29 of which are for general use. Reserved registers R00, R01, R02 are used for the program counter, stack pointer and flags respectively. Instuctions are always 32 bits and the model has a CPI of 1 with instruction loading pipeline. Instructions and data seem to share the same "memory space" though instructions always start on address divisible by 4. The gem5 emulated model is broken up in three classes "BaseSimpleCPU","AtomicSimpleCPU","TimingSimpleCPU". The first class defines the base architectural stats that are common across the other two models. The "AtomicSimpleCPU" utilizes the faster "Atomic" memory acces type while the "TimingSimpleCPU" utilizes the more detailed "Timing" memory access type.
@@ -52,14 +52,14 @@ The "simple" model resulted in 52221000 ticks of runtime with a host tick rate o
 
 Consequently, We run the same code through emulations with clock frequencies of 1GHz, 3GHz, and SimpleMemory,DDR3_1600_8x8 memory models, we found the following results:
 
-| Minor | 1GHz | 3GHz | SimpleMemory | DDR3 |
-| --- | --- |--- |--- | --- |
-| Ticks | 50826000 | 39675618 | 33283000 | 42042000 |
-| Tickrate | 573013661 | 402759986 | 331799583 | 425173254 |
-| Host time | 0.09 | 0.10 | 0.10 | 0.10 |
-| Commit. Insts. | 11685 |  11685 | 11685 | 11685 |
-| Commit. Ops. | 13479 | 13479 | 13479 | 13479 |
-| L2 access | 866 | 861 | 935 | 866 |
+| Minor          |    1GHz    |    3GHz    | SimpleMemory |    DDR3     |
+|----------------|------------|------------|--------------|-------------|
+| Ticks          | 50826000   | 39675618   | 33283000     | 42042000    |
+| Tickrate       | 573013661  | 402759986  | 331799583    | 425173254   |
+| Host time      | 0.09       | 0.10       | 0.10         | 0.10        |
+| Commit. Insts. | 11685      | 11685      | 11685        | 11685       |
+| Commit. Ops.   | 13479      | 13479      | 13479        | 13479       |
+| L2 access      | 866        | 861        | 935          | 866         |
 
 | Timing         |    1GHz    |    3GHz    | SimpleMemory |    DDR3     |
 |----------------|------------|------------|--------------|-------------|
