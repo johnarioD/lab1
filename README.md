@@ -53,7 +53,7 @@ The "simple" model resulted in 52221000 ticks of runtime with a host tick rate o
 Consequently, We run the same code through emulations with clock frequencies of 1GHz, 3GHz, and SimpleMemory,DDR3_1600_8x8 memory models, we found the following results:
 
 | Minor | 1GHz | 3GHz | SimpleMemory | DDR3 |
------------------------------------------------------------------------
+|---------------------------------------------------------------------|
 | Ticks | 50826000 | 39675618 | 33283000 | 42042000 |
 | Tickrate | 573013661 | 402759986 | 331799583 | 425173254 |
 | Host time | 0.09 | 0.10 | 0.10 | 0.10 |
@@ -62,7 +62,7 @@ Consequently, We run the same code through emulations with clock frequencies of 
 | L2 access | 866 | 861 | 935 | 866 |
 
 | Timing         |    1GHz    |    3GHz    | SimpleMemory |    DDR3     |
--------------------------------------------------------------------------
+|-----------------------------------------------------------------------|
 | Ticks          | 65665000   |  42160131  |   47810000   |  39945000   |
 | Tickrate       | 1774132758 |  768536011 |   1266857438 |  714996338  |
 | Host time      | 0.04       |  0.05      |   0.04       |  0.06       |
