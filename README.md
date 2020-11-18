@@ -40,7 +40,7 @@ The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and
   
 (_sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html_)  
 
-#### Simulations:  
+### Simulations:  
 We run emulations using "Minor" and "SimpleCPU" architectures on a simple C script that calculates the hypotenuse of a triangle with sides X,Y.  
 
 On our first test we run the simulation on default settings for each CPU architecture.  
