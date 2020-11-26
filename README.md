@@ -1,4 +1,4 @@
-# Lab1
+# Lab_1
 Computer Architecture Lab 1
 
 ## Answer 1:
@@ -14,23 +14,33 @@ The files _Config.json_ and _Config.ini_ seem to be two different versions of th
 
 From _Config.ini_ we found:  
   
-Cache Line Size = 64 bytes (Line 15)  
-Clock = 1000 (assumed MHz) (Line 44)  
-CPU clock = 250 (assumed MHz) (Line 58)  
-CPU type: 'minor' (Line 65), round robin policy (Line 124)  
-Data Cache: Size 32KB, 64KB addresses (Lines 187, 165), assosiativity 2 (Line 166), data/responce/tag latencies 2/1/2 (Lines 170/181/185), 16 write buffers (Line 190), clock frequencies: Max=1THz/, Min=1KHz (Lines 198,199), block size 64 (Line 213), assosiativity type = set associative (Line 228)  
-Function Units: 8 units (Line 399)  
-Instruction Cache: Size 48KB, 64KB addresses (Lines 929,911), associativity 3 (Line ), data/responce/tag latencies 1/1/1 (Lines 916/927/931), write buffers 8 (Line 936), block size 64 (Line 959),assosiativity type =  set associative (Line 974), clock frequencies: Max = 1THz Min = 1KHz (Lines 983,984)  
-L2 cache: Size 1MB, 64KB addresses (Lines 1235, 1217), associativity 16 (Line 1218), data/responce/tag latencies 12/5/12 (Lines 1222/1233/1237), clock frequencies: Max = 1THz Min = 1KHz (Lines 1250,1251), associativity type: base set associative (Line 1262), block size 64 (Line 1265)  
-Memory: 2 memories with size 512MB (Lines 1413,1543)  
+**Clock** = 1000 (assumed MHz) (Line 44)  
+**CPU clock** = 250 (assumed MHz) (Line 58)  
+  
+**CPU type**: 'minor' (Line 65), round robin policy (Line 124)  
+**Function Units**: 8 units (Line 399)  
+  
+**Cache Line Size** = 64 bytes (Line 15)  
+  
+**Data Cache**: Size 32KB with 64KB addresses (Lines 187, 165), data/responce/tag latencies 2/1/2 (Lines 170/181/185), 16 write buffers (Line 190), clock frequencies: Max = 1THz/, Min=1KHz (Lines 198,199), block size 64 (Line 213), assosiativity type = set associative with associativity 2 (Line 228, 166)  
+  
+**Instruction Cache**: Size 48KB with 64KB addresses (Lines 929, 911), data/responce/tag latencies 1/1/1 (Lines 916/927/931), 8 write buffers (Line 936), clock frequencies: Max = 1THz Min = 1KHz (Lines 983,984), block size 64 (Line 959), assosiativity type =  set associative with associativity 3 (Line 974, 912)  
+  
+**L2 cache**: Size 1MB, 64KB addresses (Lines 1235, 1217), associativity 16 (Line 1218), data/responce/tag latencies 12/5/12 (Lines 1222/1233/1237), clock frequencies: Max = 1THz Min = 1KHz (Lines 1250,1251), associativity type: base set associative (Line 1262), block size 64 (Line 1265)  
+  
+**Memory**: 2 memories with size 512MB (Lines 1413,1543)  
   
 From _Stats.txt_ we found:  
   
-Number of commited instructions: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: 14)  
-No. of commited operations: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: 15)  
-Overall number of instrcutions/operations: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: 10,11)  
-Clock Period in ticks: 1000 system.clk_domain.clock (1 tick every 0.001 ns according to sim_freq, Line: 9)  
-L2 accesses: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: 84)  
+**Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: 9)  
+  
+**No. of _Commited Instructions_**: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: 14)  
+**No. of _Commited Operations_**: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: 15)  
+**Overall number of instrcutions/operations**: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: 10,11)  
+  
+As it seems, all of our instructions were successfully commited, however, we discovered a discrepancy between the amount of commited operations and instructions. We believe that that is most probably a result of our C compiler utilizing assembly instructions that require more than one operation to finish, possibly some type of macro.  
+  
+**L2 accesses**: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: 84)  
 If it was not provided, it's sum of L1 misses from data and instruction caches  
 (Keywords: system.cpu_cluster.cpus.dcache.overall_misses, system.cpu_cluster.cpus.icache.overall_misses, Lines: 111,314)  
 
