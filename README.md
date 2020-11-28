@@ -12,13 +12,13 @@ Emulated system memory is 2GB
 ## Answer 2:
 The files _Config.json_ and _Config.ini_ seem to be two different versions of the same file, both containing info about the emulated hardware & architecture characteristics  
 
-From _Config.ini_ we found:  
+From [_Config.ini_](Stats/starterConfig.ini) we found:  
   
-**Clock** = 1000 (assumed MHz) (Line 44)  
-**CPU clock** = 250 (assumed MHz) (Line 58)  
+**Clock** = 1000 (assumed MHz) ([Line 44](Stats/starterConfig.ini#L44))  
+**CPU clock** = 250 (assumed MHz) ([Line 58](Stats/starterConfig.ini#L58))  
   
-**CPU type**: 'minor' (Line 65), round robin policy (Line 124)  
-**Function Units**: 8 units (Line 399)  
+**CPU type**: 'minor' ([Line 65](Stats/starterConfig.ini#L65)), round robin policy ([Line 124](Stats/starterConfig.ini#L124))  
+**Function Units**: 8 units ([Line 399](Stats/starterConfig.ini#L399))  
   
 **Cache Line Size** = 64 bytes (Line 15)  
   
