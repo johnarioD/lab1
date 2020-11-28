@@ -28,7 +28,7 @@ From [_Config.ini_](Stats/starterConfig.ini) we found:
   
 **L2 cache**: Size 1MB, 64KB addresses (Lines [1235](Stats/starterConfig.ini#L1235), [1217](Stats/starterConfig.ini#L1217)), associativity 16 (Line [1218](Stats/starterConfig.ini#L1218)), data/responce/tag latencies 12/5/12 (Lines [1222](Stats/starterConfig.ini#L1222), [1233](Stats/starterConfig.ini#L1233), [1237](Stats/starterConfig.ini#L1237)), clock frequencies: Max = 1THz Min = 1KHz (Lines [1250](Stats/starterConfig.ini#L1250), [1251](Stats/starterConfig.ini#L1251)), associativity type: base set associative (Line [1262](Stats/starterConfig.ini#L1262)), block size 64 (Line [1265](Stats/starterConfig.ini#L1265))  
   
-**Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413)1413, [1543](Stats/starterConfig.ini#L1543))  
+**Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413), [1543](Stats/starterConfig.ini#L1543))  
   
 From _Stats.txt_ we found:  
   
