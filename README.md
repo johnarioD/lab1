@@ -26,23 +26,23 @@ From [_Config.ini_](Stats/starterConfig.ini) we found:
   
 **Instruction Cache**: Size 48KB with 64KB addresses (Lines [929](Stats/starterConfig.ini#L929), [911](Stats/starterConfig.ini#L911)), data/responce/tag latencies 1/1/1 (Lines [916](Stats/starterConfig.ini#L916), [927](Stats/starterConfig.ini#L927), [931](Stats/starterConfig.ini#L931)), 8 write buffers (Line [936](Stats/starterConfig.ini#L936)), clock frequencies: Max = 1THz Min = 1KHz (Lines [983](Stats/starterConfig.ini#L983), [984](Stats/starterConfig.ini#L984)), block size 64 (Line [959](Stats/starterConfig.ini#L959)), assosiativity type =  set associative with associativity 3 (Line [974](Stats/starterConfig.ini#L974), [912](Stats/starterConfig.ini#L912))  
   
-**L2 cache**: Size 1MB, 64KB addresses (Lines [1235](Stats/starterConfig.ini#L1235), [1217](Stats/starterConfig.ini#L1217)), , data/responce/tag latencies 12/5/12 (Lines [1222](Stats/starterConfig.ini#L1222), [1233](Stats/starterConfig.ini#L1233), [1237](Stats/starterConfig.ini#L1237)), clock frequencies: Max = 1THz Min = 1KHz (Lines [1250](Stats/starterConfig.ini#L1250), [1251](Stats/starterConfig.ini#L1251)), associativity type: base set associative with associativity 16 (Lines [1262](Stats/starterConfig.ini#L1262), [1218](Stats/starterConfig.ini#L1218)), block size 64 (Line [1265](Stats/starterConfig.ini#L1265))  
+**L2 cache**: Size 1MB, 64KB addresses (Lines [1235](Stats/starterConfig.ini#L1235), [1217](Stats/starterConfig.ini#L1217)), associativity 16 (Line [1218](Stats/starterConfig.ini#L1218)), data/responce/tag latencies 12/5/12 (Lines [1222](Stats/starterConfig.ini#L1222)1222, [1233](Stats/starterConfig.ini#L1233), [1237](Stats/starterConfig.ini#L1237)), clock frequencies: Max = 1THz Min = 1KHz (Lines [1250](Stats/starterConfig.ini#L1250), [1251](Stats/starterConfig.ini#L1251)), associativity type: base set associative (Line [1262](Stats/starterConfig.ini#L1262)), block size 64 (Line [1265](Stats/starterConfig.ini#L1265))  
   
-**Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413), [1543](Stats/starterConfig.ini#L1543))  
+**Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413)1413, [1543](Stats/starterConfig.ini#L1543))  
   
-From [_Stats.txt_](Stats/starterStats.txt) we found:  
+From _Stats.txt_ we found:  
   
-**Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: [9](Stats/starterStats.txt#L9))  
+**Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: 9)  
   
-**No. of _Commited Instructions_**: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: [14](Stats/starterStats.txt#L14))  
-**No. of _Commited Operations_**: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: [15](Stats/starterStats.txt#L15))  
-**Overall number of instrcutions/operations**: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: [10](Stats/starterStats.txt#L10), [11](Stats/starterStats.txt#L11))  
+**No. of _Commited Instructions_**: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: 14)  
+**No. of _Commited Operations_**: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: 15)  
+**Overall number of instrcutions/operations**: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: 10,11)  
   
 As it seems, all of our instructions were successfully commited, however, we discovered a discrepancy between the amount of commited operations and instructions. We believe that that is most probably a result of our C compiler utilizing assembly instructions that require more than one operation to finish, possibly some type of macro.  
   
-**L2 accesses**: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: [84](Stats/starterStats.txt#L84))  
+**L2 accesses**: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: 84)  
 If it was not provided, it's sum of L1 misses from data and instruction caches  
-(Keywords: system.cpu_cluster.cpus.dcache.overall_misses, system.cpu_cluster.cpus.icache.overall_misses, Lines: [113](Stats/starterStats.txt#L113), [316](Stats/starterStats.txt#L1316))  
+(Keywords: system.cpu_cluster.cpus.dcache.overall_misses, system.cpu_cluster.cpus.icache.overall_misses, Lines: 111,314)  
 
 ## Answer 3:  
 The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and _Minor_  
@@ -50,7 +50,8 @@ The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and
 **SimpleCPU**: The SimpleCPU model is a 32 bit RISC, in-order processor model that lacks detail as it utilizes a minimal amount of instructions. It has 32 bit registers, 29 of which are for general use. Reserved registers **_R00_**, **_R01_**, **_R02_** are used for the program counter, stack pointer and flags respectively. Instuctions are always 32 bits and the model has a CPI of 1 with instruction loading pipeline. Instructions and data seem to share the same memory space though instructions always start on address divisible by 4. The gem5 emulated model is broken up in three classes _BaseSimpleCPU_, _AtomicSimpleCPU_, _TimingSimpleCPU_. The first class defines the base architectural stats that are common across the other two models. The _AtomicSimpleCPU_ utilizes the faster _Atomic_ memory acces type while the _TimingSimpleCPU_ utilizes the more detailed _Timing_ memory access type.  
 
 **Minor**: The minor processor model has a fixed pipeline with configurable data structures and execute behaviour. It is intended to be used for processsors with strict "in-order" execution behaviour and can also allow the visualization of an instruction's position in the pipeline with the use of MinorTrace/minorview.py tool. It can be used to simulate the micro-architectural model of a chosen processor with similar capabilities. The model is unable to multithread. It also uses some branch prediction mechanisms to speed up optimize memory access, registry dependencies are managed by a "scoreboard".  
-  
+**HPI**: The acronym HPI stands for High-Performance In-order CPU . It is based on the Arm architecture. The HPI CPU timing model is tuned to be representative of a modern in-order Armv8-A implementation. The pipeline of the HPI CPU uses the same four-stage model as the MinorCPU.
+
 (_sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html_)  
 
 ### Simulations:  
