@@ -32,17 +32,17 @@ From [_Config.ini_](Stats/starterConfig.ini) we found:
   
 From _Stats.txt_ we found:  
   
-**Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: 9)  
+**Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: [9](Stats/starterStats.txt#L9))  
   
-**No. of _Commited Instructions_**: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: 14)  
-**No. of _Commited Operations_**: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: 15)  
-**Overall number of instrcutions/operations**: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: 10,11)  
+**No. of _Commited Instructions_**: 5028 (Keyword: system.cpu_cluster.cpus.committedInsts, Line: [14](Stats/starterStats.txt#L14))  
+**No. of _Commited Operations_**: 5834 (Keyword: system.cpu_cluster.cpus.committedOps, Line: [15](Stats/starterStats.txt#L15))  
+**Overall number of instrcutions/operations**: 5028/5834 (Keywords: sim_insts/sim_ops, Lines: [10](Stats/starterStats.txt#L10),[11](Stats/starterStats.txt#L11))  
   
 As it seems, all of our instructions were successfully commited, however, we discovered a discrepancy between the amount of commited operations and instructions. We believe that that is most probably a result of our C compiler utilizing assembly instructions that require more than one operation to finish, possibly some type of macro.  
   
-**L2 accesses**: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: 84)  
+**L2 accesses**: 497 (Keyword: system.cpu_cluster.toL2Bus.snoop_filter.tot_requests, Line: [84](Stats/starterStats.txt#L84))  
 If it was not provided, it's sum of L1 misses from data and instruction caches  
-(Keywords: system.cpu_cluster.cpus.dcache.overall_misses, system.cpu_cluster.cpus.icache.overall_misses, Lines: 111,314)  
+(Keywords: system.cpu_cluster.cpus.dcache.overall_misses, system.cpu_cluster.cpus.icache.overall_misses, Lines: [113](Stats/starterStats.txt#113),[314](Stats/starterStats.txt#L314))  
 
 ## Answer 3:  
 The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and _Minor_  
