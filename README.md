@@ -83,8 +83,8 @@ Comparing one model to another, it seems that the minor model in general require
 
 We also executed several other simulations whose data would have been too many to include in an easy-to-look-at manner in this readme so we decided to make a couple of diagrams of the most basic results we found, namely the simulations ticks it took for the simulation to finish and the real time seconds.  
 
-[Alt](Charts/Tick.png)  
-[Alt](Charts/Host Time.png)  
+![Alt](Charts/Tick.png)  
+![Alt](Charts/Host_Time.png)  
 
 (As no simple description could explain what model we used to get each datum on the graph we decided to replace them with letter. Here's a list of what each letter represents:  
 _A - gem5 default for this CPU,
