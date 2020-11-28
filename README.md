@@ -14,21 +14,21 @@ The files _Config.json_ and _Config.ini_ seem to be two different versions of th
 
 From [_Config.ini_](Stats/starterConfig.ini) we found:  
   
-**Clock** = 1000 (assumed MHz) ([Line 44](Stats/starterConfig.ini#L44))  
-**CPU clock** = 250 (assumed MHz) ([Line 58](Stats/starterConfig.ini#L58))  
+**Clock** = 1000 (assumed MHz) (Line [44](Stats/starterConfig.ini#L44))  
+**CPU clock** = 250 (assumed MHz) (Line [58](Stats/starterConfig.ini#L58))  
   
-**CPU type**: 'minor' ([Line 65](Stats/starterConfig.ini#L65)), round robin policy ([Line 124](Stats/starterConfig.ini#L124))  
-**Function Units**: 8 units ([Line 399](Stats/starterConfig.ini#L399))  
+**CPU type**: 'minor' (Line [65](Stats/starterConfig.ini#L65)), round robin policy (Line [124](Stats/starterConfig.ini#L124))  
+**Function Units**: 8 units (Line [399](Stats/starterConfig.ini#L399))  
   
-**Cache Line Size** = 64 bytes (Line 15)  
+**Cache Line Size** = 64 bytes (Line [15](Stats/starterConfig.ini#L15))  
   
-**Data Cache**: Size 32KB with 64KB addresses (Lines 187, 165), data/responce/tag latencies 2/1/2 (Lines 170/181/185), 16 write buffers (Line 190), clock frequencies: Max = 1THz/, Min=1KHz (Lines 198,199), block size 64 (Line 213), assosiativity type = set associative with associativity 2 (Line 228, 166)  
+**Data Cache**: Size 32KB with 64KB addresses (Lines [187](Stats/starterConfig.ini#L187), [165](Stats/starterConfig.ini#L165)), data/responce/tag latencies 2/1/2 (Lines [170](Stats/starterConfig.ini#L170), [181](Stats/starterConfig.ini#L181), [185](Stats/starterConfig.ini#L185)), 16 write buffers (Line [190](Stats/starterConfig.ini#L190)), clock frequencies: Max = 1THz/, Min=1KHz (Lines [198](Stats/starterConfig.ini#L198), [199](Stats/starterConfig.ini#L199)), block size 64 (Line [213](Stats/starterConfig.ini#L213)), assosiativity type = set associative with associativity 2 (Line [228](Stats/starterConfig.ini#L228), [166](Stats/starterConfig.ini#L166))  
   
-**Instruction Cache**: Size 48KB with 64KB addresses (Lines 929, 911), data/responce/tag latencies 1/1/1 (Lines 916/927/931), 8 write buffers (Line 936), clock frequencies: Max = 1THz Min = 1KHz (Lines 983,984), block size 64 (Line 959), assosiativity type =  set associative with associativity 3 (Line 974, 912)  
+**Instruction Cache**: Size 48KB with 64KB addresses (Lines [929](Stats/starterConfig.ini#L929), [911](Stats/starterConfig.ini#L911)), data/responce/tag latencies 1/1/1 (Lines [916](Stats/starterConfig.ini#L916), [927](Stats/starterConfig.ini#L927), [931](Stats/starterConfig.ini#L931)), 8 write buffers (Line [936](Stats/starterConfig.ini#L936)), clock frequencies: Max = 1THz Min = 1KHz (Lines [983](Stats/starterConfig.ini#L983), [984](Stats/starterConfig.ini#L984)), block size 64 (Line [959](Stats/starterConfig.ini#L959)), assosiativity type =  set associative with associativity 3 (Line [974](Stats/starterConfig.ini#L974), [912](Stats/starterConfig.ini#L912))  
   
-**L2 cache**: Size 1MB, 64KB addresses (Lines 1235, 1217), associativity 16 (Line 1218), data/responce/tag latencies 12/5/12 (Lines 1222/1233/1237), clock frequencies: Max = 1THz Min = 1KHz (Lines 1250,1251), associativity type: base set associative (Line 1262), block size 64 (Line 1265)  
+**L2 cache**: Size 1MB, 64KB addresses (Lines [1235](Stats/starterConfig.ini#L1235), [1217](Stats/starterConfig.ini#L1217)), associativity 16 (Line [1218](Stats/starterConfig.ini#L1218)), data/responce/tag latencies 12/5/12 (Lines [1222](Stats/starterConfig.ini#L1222)1222, [1233](Stats/starterConfig.ini#L1233), [1237](Stats/starterConfig.ini#L1237)), clock frequencies: Max = 1THz Min = 1KHz (Lines [1250](Stats/starterConfig.ini#L1250), [1251](Stats/starterConfig.ini#L1251)), associativity type: base set associative (Line [1262](Stats/starterConfig.ini#L1262)), block size 64 (Line [1265](Stats/starterConfig.ini#L1265))  
   
-**Memory**: 2 memories with size 512MB (Lines 1413,1543)  
+**Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413)1413, [1543](Stats/starterConfig.ini#L1543))  
   
 From _Stats.txt_ we found:  
   
