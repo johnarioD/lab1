@@ -30,7 +30,7 @@ From [_Config.ini_](Stats/starterConfig.ini) we found:
   
 **Memory**: 2 memories with size 512MB (Lines [1413](Stats/starterConfig.ini#L1413), [1543](Stats/starterConfig.ini#L1543))  
   
-From _Stats.txt_ we found:  
+From [_Stats.txt_](Stats/starterStats.txt) we found:  
   
 **Clock Period in ticks**: 1000 system.clk_domain.clock (1 tick is 0.001 ns according to sim_freq, Line: [9](Stats/starterStats.txt#L9))  
   
