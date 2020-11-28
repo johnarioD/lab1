@@ -84,7 +84,14 @@ Comparing one model to another, it seems that the minor model in general require
 We also executed several other simulations whose data would have been too many to include in an easy-to-look-at manner in this readme so we decided to make a couple of diagrams of the most basic results we found, namely the simulations ticks it took for the simulation to finish and the real time seconds.  
 
 (As no simple description could explain what model we used to get each datum on the graph we decided to replace them with letter. Here's a list of what each letter represents:  
-_A - gem5 default for this CPU, B - 1GHz cpu clock all other setting default, C - 3GHz clock all other settings default, D - SimpleMemory type default clock, E - DDR3_1600_8x8 memory default clock, F - DDR3_2133_8x8 1GHz clock, G - DDR3_2133_8x8 1GHZ clock, H - HBM 1GHz clock, I - WideIO 1GHz clock, J - DDR3_2133_8x8 1.5GHz clock, K - DDR3_2133_8x8 1.5GHZ clock, L - HBM 1.5GHz clock, M - WideIO 1.5GHz clock, N - DDR3_2133_8x8 2GHz clock, O - DDR3_2133_8x8 2GHZ clock, P - HBM 2GHz clock, Q - WideIO 2GHz clock, R - DDR3_2133_8x8 2.5GHz clock, S - DDR3_2133_8x8 2.5GHZ clock, T - HBM 2.5GHz clock, U - WideIO 2.5GHz clock, V - DDR3_2133_8x8 3GHz clock, W - DDR3_2133_8x8 3GHZ clock, X - HBM 3GHz clock, Y - WideIO 3GHz clock_  
+_A - gem5 default for this CPU,
+B - 1GHz cpu clock all other setting default, C - 3GHz clock all other settings default,  
+D - SimpleMemory type default clock, E - DDR3_1600_8x8 memory default clock,  
+F - DDR3_2133_8x8 1GHz clock, G - DDR3_2133_8x8 1GHZ clock, H - HBM 1GHz clock, I - WideIO 1GHz clock,  
+J - DDR3_2133_8x8 1.5GHz clock, K - DDR3_2133_8x8 1.5GHZ clock, L - HBM 1.5GHz clock, M - WideIO 1.5GHz clock,  
+N - DDR3_2133_8x8 2GHz clock, O - DDR3_2133_8x8 2GHZ clock, P - HBM 2GHz clock, Q - WideIO 2GHz clock,  
+R - DDR3_2133_8x8 2.5GHz clock, S - DDR3_2133_8x8 2.5GHZ clock, T - HBM 2.5GHz clock, U - WideIO 2.5GHz clock,  
+V - DDR3_2133_8x8 3GHz clock, W - DDR3_2133_8x8 3GHZ clock, X - HBM 3GHz clock, Y - WideIO 3GHz clock_  
 ) 
 
 **_Comments:_**
