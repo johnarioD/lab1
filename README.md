@@ -53,7 +53,8 @@ The two main types of in-order CPU architecture used in gem5 are _SimpleCPU_ and
 
 **HPI**: The acronym HPI stands for High-Performance In-order CPU . It is based on the Arm architecture. The HPI CPU timing model is tuned to be representative of a modern in-order Armv8-A implementation. The pipeline of the HPI CPU uses the same four-stage model as the MinorCPU.
 
-(_sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html_)  
+(_sources: https://www.gem5.org/documentation/general_docs/cpu_models/SimpleCPU, https://www.simple-cpu.com/cpu-instruction-set-architecture-en.php, https://www.gem5.org/documentation/general_docs/cpu_models/minor_cpu, http://pages.cs.wisc.edu/~swilson/gem5-docs/classMinor_1_1Scoreboard.html,
+https://raw.githubusercontent.com/arm-university/arm-gem5-rsk/master/gem5_rsk.pdf_)  
 
 ### Simulations:  
 We run emulations using "Minor" and "SimpleCPU" architectures on a simple C script that calculates the hypotenuse of a triangle with sides X,Y.  
