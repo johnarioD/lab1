@@ -1,5 +1,5 @@
 # Lab_1
-Computer Architecture Lab 1
+Computer Architecture Lab 1  
 This report was written by Ioannis Diamantaras (9387) and Dimosthenis Bounarelis (9431).
 
 ## Answer 1:
