@@ -1,6 +1,6 @@
 # Lab_1
 Computer Architecture Lab 1  
-This report was written by Ioannis Diamantaras (9387) and Dimosthenis Bounarelis (9431).
+This report was written by Ioannis Diamantaras (9387) and Dimosthenis Mpounarelis (9431).
 
 ## Answer 1:
 After looking through starter_se.py we found the following:  
